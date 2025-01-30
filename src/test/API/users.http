@@ -8,9 +8,10 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-	"Name": "Fabian",
+  "UserName": "kuepa2",
+	"Name": "Jhon Doe",
 	"Pass": "password1",
-	"Role": "Admin",
+	"Role": "Student",
 	"State": "Active"
 }
 
@@ -20,14 +21,15 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-	"Name": "The Administrator",
+  "UserName": "kuepa1",
+	"Name": "Tutor Fabian",
 	"Pass": "password1",
-	"Role": "Admin",
+	"Role": "Moderator",
 	"State": "Active"
 }
 
 ### Recuperar un Elemento por id
-GET {{url}}/{{model}}/6804c9a1-4ea5-4592-82de-bed420112f3d
+GET {{url}}/{{model}}/a8e4aa11-9469-4151-a9f5-23addf4b789f
 Authorization: Bearer {{token}}
 
 
@@ -53,6 +55,6 @@ Content-Type: application/json
 }
 
 ### TEST Auth
-GET {{url}}/login?password=password1
+GET {{url}}/login?userName=kuepa1&password=password1
 ### TEST Auth
-GET {{url}}/login?password=passasdasd
+GET {{url}}/login?userName=kuepa1&password=passasdasd

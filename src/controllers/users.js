@@ -31,17 +31,20 @@ export class UserController {
   create = async (c) => {
     const body = await c.req.json();
     let result = validateUser(body);
-    if (!result.success)
-      return c.json({ error: 'unprocessable A', message: JSON.parse(result.error.message) }, 422);
+    if (!result.success) // If the validation fails
+      return c.json({ error: 'unprocessable 1', message: JSON.parse(result.error.message) }, 422);
     result = result.data;
+    const users = await this.userModel.getAll({ c });
+    if (users.results.find(user => user.UserName === result.UserName)) // If the username already exists
+      return c.json({ error: 'unprocessable 2', message: 'Username already exists' }, 422);
     const salt = crypto.randomBytes(16).toString('hex');
     const hash = crypto.pbkdf2Sync(result.Pass.toString() + OFPEPE, salt, 100000, 64, 'sha512').toString('hex');
     result.Pass = hash;
     result.Salt = salt;
     result.UserId = crypto.randomUUID().toString();
     const resultsUser = await this.userModel.create({ i: result, c });
-    if (!resultsUser.done)
-      return c.json({ error: 'unprocessable B', message: resultsUser.error }, 422);
+    if (!resultsUser.done) // If the user creation fails
+      return c.json({ error: 'unprocessable 3', message: resultsUser.error }, 422);
     return c.json({ id: result.UserId }, 201);
   };
 

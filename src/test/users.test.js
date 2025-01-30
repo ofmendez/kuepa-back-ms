@@ -6,8 +6,9 @@ let UserCreated = {};
 
 const user = {
   Name: 'user',
+  UserName: 'test_user_name_1234_no_repeated',
   Pass: 'user1234',
-  Role: 'User',
+  Role: 'Moderator',
   State: 'Active',
 };
 

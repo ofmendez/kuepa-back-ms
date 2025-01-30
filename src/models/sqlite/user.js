@@ -26,9 +26,9 @@ export class UserModel {
   async create ({ i, c }) {
     try {
       const query = this.db.query(
-        'INSERT INTO Users (UserId, Name, Pass, Salt, Role, State) VALUES (?1, ?2, ?3, ?4, ?5, ?6)'
+        'INSERT INTO Users (UserId, UserName, Name, Pass, Salt, Role, State) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)'
       );
-      const result = query.all(i.UserId, i.Name, i.Pass, i.Salt, i.Role, i.State);
+      const result = query.all(i.UserId, i.UserName, i.Name, i.Pass, i.Salt, i.Role, i.State);
       return { done: true, results: result };
     } catch (error) {
       return { done: false, error };

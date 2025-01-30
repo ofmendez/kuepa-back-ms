@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS Users;
 
 CREATE TABLE IF NOT EXISTS Users ( 
 	UserId TEXT PRIMARY KEY, 
+  UserName TEXT,
 	Name TEXT,
 	Pass TEXT,
 	Salt TEXT,
@@ -10,14 +11,15 @@ CREATE TABLE IF NOT EXISTS Users (
 );
 
 
-INSERT INTO Users (UserId, Name, Pass, Salt, Role, State)
+INSERT INTO Users (UserId, UserName, Name, Pass, Salt, Role, State)
 VALUES 
 (
-	'6804c9a1-4ea5-4592-82de-bed420112f3d',
-	'The Administrator',
-	'c90d6431f845817ca77686b9a90e15aaa8af599f66d830199b6c885f9117511b8a8e9660b007eb448b2a5fa332d09ddfc53c2b33203286277764dca08abdac01',
-	'8bf4cc496bfceed98c201e24c8bd8807',
-	'Admin',
+	'a8e4aa11-9469-4151-a9f5-23addf4b789f',
+  'kuepa1',
+	'Tutor Fabian',
+	'bf5c85a259f657b9431fa8617c95fd2977168b0a88d3fde624afc1c233a5b5117bc1bdf173242be4dc10fe72515c5df3105d04a7495583237dbc15dcf3c4b3fc',
+	'6c72b78ebdc209a049dcfa082ecf298f',
+	'Moderator',
 	'Active'
 );
 

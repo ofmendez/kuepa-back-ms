@@ -4,8 +4,9 @@ import { app } from '@src/index';
 
 const user = {
   Name: 'test',
+  UserName: 'test_user_name_1234_no_repeated',
   Pass: 'test1234',
-  Role: 'Admin',
+  Role: 'Student',
   State: 'Active',
 };
 const headers = {
@@ -39,6 +40,7 @@ test('Should create and delete an element', async () => {
     headers
   });
   const User = await res.json();
+  console.log(User);
   expect(res.status).toBe(201);
 
   const res2 = await app.request(`api/users/${User.id}`, {
