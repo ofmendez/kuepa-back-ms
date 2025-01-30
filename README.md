@@ -1,10 +1,10 @@
 # Prueba tecnica para Kuepa (BACKEND)
 
-## Publicado en
+## Vista front publicada en
 
-[]()
+[https://kuepa-front-ms.pages.dev/](https://kuepa-front-ms.pages.dev/)
 
-## Desarrollo
+## Desarrollo Backend
 
 ### Prerequisitos
 
@@ -36,6 +36,8 @@ bun test
 ```
 
 ### Para desplegar
+
+Tener en cuenta que los usuarios del archivo semilla de producción dependen del token.
 
 ```sh
 bun run seed
