@@ -29,7 +29,7 @@ Content-Type: application/json
 }
 
 ### Recuperar un Elemento por id
-GET {{url}}/{{model}}/a8e4aa11-9469-4151-a9f5-23addf4b789f
+GET {{url}}/{{model}}/e0a740db-3b40-4197-b6de-5d0563a00ca9
 Authorization: Bearer {{token}}
 
 

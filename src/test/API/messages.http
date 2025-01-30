@@ -1,0 +1,13 @@
+## Rmember send Request: Ctrl + Alt + R
+@url = {{baseUrl}}:{{port}}{{basePath}}
+@model = messages
+
+
+
+### GET todos los Elementos
+GET {{url}}/{{model}}
+Authorization: Bearer {{token}}
+
+
+
+
